@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="docker,technology," />
+  <meta name="keywords" content="technology,docker," />
 
 
 
@@ -100,7 +100,7 @@ centos系统
 内核版本3.10及以上  
 
 查看自己的版本信息123456789101112 [root@sdbserver3 ~]# uname -r     2.6.32-431.el6.x86_64  ```  比如我的版本是：2.6.32  由于我的版本低于规定的版本，所以需要升级内核  ### 内核版本升级  1. 下载解压内核  ``` bash">
-<meta property="og:updated_time" content="2016-10-26T09:47:01.000Z">
+<meta property="og:updated_time" content="2016-10-31T09:42:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker实战（一）----docker安装">
 <meta name="twitter:description" content="系统配置检查
@@ -188,7 +188,7 @@ centos系统
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-            Startseite
+            ホーム
           </a>
         </li>
       
@@ -196,7 +196,7 @@ centos系统
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-            Archiv
+            アーカイブ
           </a>
         </li>
       
@@ -204,7 +204,7 @@ centos系统
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-            Tags
+            タグ
           </a>
         </li>
       
@@ -265,7 +265,7 @@ centos系统
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">投稿日</span>
             <time itemprop="dateCreated" datetime="2016-10-11T15:17:32+08:00" content="2016-10-11">
               2016-10-11
             </time>
@@ -314,7 +314,7 @@ centos系统
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># sh -c 'yes "" | make oldconfig'  </span></div><div class="line">  HOSTCC  scripts/basic/fixdep  </div><div class="line">  HOSTCC  scripts/kconfig/conf.o  </div><div class="line">  HOSTCC  scripts/kconfig/zconf.tab.o  </div><div class="line">  HOSTLD  scripts/kconfig/conf  </div><div class="line"> scripts/kconfig/conf --oldconfig Kconfig  </div><div class="line">.config:497:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> X86_INTEL_PSTATE  </div><div class="line">.config:565:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> PCCARD_NONSTATIC  </div><div class="line">.config:2730:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM8400  </div><div class="line">.config:2731:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM831X  </div><div class="line">.config:2732:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM8350  </div><div class="line">.config:2745:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM8350_I2C  </div><div class="line">.config:2747:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> AB3100_CORE  </div><div class="line">\*  </div><div class="line">\* Restart config...  </div><div class="line">\*  </div><div class="line">\*  </div><div class="line">\* General setup  </div><div class="line">\*  </div><div class="line">Cross-compiler tool prefix (CROSS_COMPILE) [] (NEW)   </div><div class="line">Compile also drivers <span class="built_in">which</span> will not load (COMPILE_TEST) [N/y/?] (NEW)   </div><div class="line">Local version - append to kernel release (LOCALVERSION) []   </div><div class="line">Automatically append version information to the version string (LOCALVERSION_AUTO) [N/y/?] n  </div><div class="line">Kernel compression mode  </div><div class="line">  1.Gzip (KERNEL_GZIP)  </div><div class="line">  2.Bzip2 (KERNEL_BZIP2)  </div><div class="line">  3.LZMA (KERNEL_LZMA)  </div><div class="line">  4.XZ (KERNEL_XZ) (NEW)  </div><div class="line">  5.LZO (KERNEL_LZO) (NEW)  </div><div class="line">  6.LZ4 (KERNEL_LZ4) (NEW)  </div><div class="line">choice[1-6?]: </div><div class="line">Default hostname (DEFAULT_HOSTNAME) [(none)] (NEW)   </div><div class="line">Support <span class="keyword">for</span> paging of anonymous memory (swap) (SWAP) [Y/n/?] y  </div><div class="line">System V IPC (SYSVIPC) [Y/n/?] y  </div><div class="line">POSIX Message Queues (POSIX_MQUEUE) [Y/n/?] y  </div><div class="line">open by fhandle syscalls (FHANDLE) [N/y/?] (NEW)  </div><div class="line">Auditing support (AUDIT) [Y/n/?] y  </div><div class="line">  Enable system-call auditing support (AUDITSYSCALL) [Y/n/?] y    </div><div class="line"> ..................  </div><div class="line"> XZ decompressor tester (XZ_DEC_TEST) [N/m/y/?] (NEW)   </div><div class="line">Averaging <span class="built_in">functions</span> (AVERAGE) [Y/?] y  </div><div class="line">CORDIC algorithm (CORDIC) [M/y/?] m  </div><div class="line">JEDEC DDR data (DDR) [N/y/?] (NEW)   </div><div class="line">Select compiled-in fonts (FONTS) [N/y/?] n  </div><div class="line"> \<span class="comment">#  </span></div><div class="line"> \<span class="comment"># configuration written to .config  </span></div><div class="line"> \<span class="comment">#</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>修改配置信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># make menuconfig</span></div><div class="line">```  </div><div class="line">选择：General Setup-&gt;Control Group Support，将下面的Menory Resource Controller <span class="keyword">for</span> Control Groups选上：  </div><div class="line">![](https://github.com/henryboss/henryboss.github.io/tree/master/images)</div><div class="line"></div><div class="line">7. 生成内核文件，编译并安装模块  </div><div class="line">``` bash</div><div class="line"> [root@sdbserver3 linux-3.12.64]<span class="comment"># make -j4 bzImage</span></div><div class="line"> [root@sdbserver3 linux-3.12.64]<span class="comment"># make -j4 modules</span></div><div class="line"> [root@sdbserver3 linux-3.12.64]<span class="comment"># make -j4 modules_install</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># make menuconfig</span></div><div class="line">```  </div><div class="line">选择：General Setup-&gt;Control Group Support，将下面的Menory Resource Controller <span class="keyword">for</span> Control Groups选上：  </div><div class="line">![](https://github.com/henryboss/henryboss.github.io/tree/master/images)</div><div class="line"></div><div class="line">core netfilter configuration</div><div class="line">iP:netfilter configuraton</div><div class="line"></div><div class="line">7. 生成内核文件，编译并安装模块  </div><div class="line">``` bash</div><div class="line"> [root@sdbserver3 linux-3.12.64]<span class="comment"># make -j4 bzImage</span></div><div class="line"> [root@sdbserver3 linux-3.12.64]<span class="comment"># make -j4 modules</span></div><div class="line"> [root@sdbserver3 linux-3.12.64]<span class="comment"># make -j4 modules_install</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># make install</span></div><div class="line">scripts/kconfig/conf --silentoldconfig Kconfig</div><div class="line">.config:5096:warning: unexpected data</div><div class="line">\<span class="comment">#</span></div><div class="line">\<span class="comment"># configuration written to .config</span></div><div class="line">\<span class="comment">#</span></div><div class="line">sh /root/linux-3.12.64/arch/x86/boot/install.sh 3.12.64 arch/x86/boot/bzImage \</div><div class="line">		System.map <span class="string">"/boot"</span></div><div class="line">ERROR: modinfo: could not find module vmware_balloon</div></pre></td></tr></table></figure>
@@ -333,6 +333,9 @@ centos系统
 </li>
 <li><p>yum 安装docker-io</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># yum -y install docker-io</span></div><div class="line">[root@sdbserver3 ~]<span class="comment"># service docker start</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>d</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">root@sdbserver3 linux-3.12.64]<span class="comment"># docker -d</span></div><div class="line">INFO[0000] Listening <span class="keyword">for</span> HTTP on unix (/var/run/docker.sock) </div><div class="line">INFO[0000] [graphdriver] using prior storage driver <span class="string">"devicemapper"</span> </div><div class="line">WARN[0000] Running modprobe bridge nf_nat failed with message: , error: <span class="built_in">exit</span> status 1 </div><div class="line">FATA[0000] Error starting daemon: Error initializing network controller: Error creating default <span class="string">"bridge"</span> network: Failed to Setup IP tables: Unable to <span class="built_in">enable</span> NAT rule: iptables failed: iptables -t nat -I POSTROUTING <span class="_">-s</span> 172.17.42.1/16 ! -o docker0 -j MASQUERADE: iptables v1.4.7: can<span class="string">'t initialize iptables table `nat'</span>: Table does not exist (<span class="keyword">do</span> you need to insmod?)</div><div class="line">Perhaps iptables or your kernel needs to be upgraded.</div><div class="line"> (<span class="built_in">exit</span> status 3)</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ol>
@@ -367,9 +370,9 @@ centos系统
       
         <div class="post-tags">
           
-            <a href="/tags/docker/" rel="tag">#docker</a>
-          
             <a href="/tags/technology/" rel="tag">#technology</a>
+          
+            <a href="/tags/docker/" rel="tag">#docker</a>
           
         </div>
       
@@ -378,16 +381,12 @@ centos系统
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/11/hexo/" rel="next" title="github的ssh-keygen">
-                <i class="fa fa-chevron-left"></i> github的ssh-keygen
-              </a>
-            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/27/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2016/10/11/hexo/" rel="prev" title="github的ssh-keygen">
+                github的ssh-keygen <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -437,10 +436,10 @@ centos系统
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            見出し
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            概要
           </li>
         </ul>
       
@@ -457,7 +456,7 @@ centos系统
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">4</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">ポスト</span>
             </a>
           </div>
 
@@ -467,7 +466,7 @@ centos系统
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">タグ</span>
               </a>
             </div>
           
@@ -522,7 +521,7 @@ centos系统
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

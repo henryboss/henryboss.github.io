@@ -171,7 +171,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-            Startseite
+            ホーム
           </a>
         </li>
       
@@ -179,7 +179,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-            Archiv
+            アーカイブ
           </a>
         </li>
       
@@ -187,7 +187,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-            Tags
+            タグ
           </a>
         </li>
       
@@ -238,7 +238,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/27/hello-world/" itemprop="url">
+                <a class="post-title-link" href="/2016/11/04/hello-world/" itemprop="url">
                   Hello World
                 </a>
               
@@ -251,9 +251,9 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-10-27T17:18:16+08:00" content="2016-10-27">
-              2016-10-27
+            <span class="post-meta-item-text">投稿日</span>
+            <time itemprop="dateCreated" datetime="2016-11-04T17:45:21+08:00" content="2016-11-04">
+              2016-11-04
             </time>
           </span>
 
@@ -340,8 +340,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/11/docker/docker/" itemprop="url">
-                  docker实战（一）----docker安装
+                <a class="post-title-link" href="/2016/10/11/myblog/" itemprop="url">
+                  我的博客
                 </a>
               
             
@@ -353,7 +353,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">投稿日</span>
             <time itemprop="dateCreated" datetime="2016-10-11T15:17:32+08:00" content="2016-10-11">
               2016-10-11
             </time>
@@ -384,58 +384,7 @@
       
         
           
-            <h2 id="系统配置检查"><a href="#系统配置检查" class="headerlink" title="系统配置检查"></a>系统配置检查</h2><ul>
-<li>centos系统  </li>
-<li>64位系统  </li>
-<li>内核版本3.10及以上  </li>
-</ul>
-<h3 id="查看自己的版本信息"><a href="#查看自己的版本信息" class="headerlink" title="查看自己的版本信息"></a>查看自己的版本信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"> [root@sdbserver3 ~]<span class="comment"># uname -r    </span></div><div class="line"> 2.6.32-431.el6.x86_64  </div><div class="line">```  </div><div class="line"></div><div class="line">比如我的版本是：2.6.32  </div><div class="line">由于我的版本低于规定的版本，所以需要升级内核</div><div class="line">  </div><div class="line"><span class="comment">### 内核版本升级  </span></div><div class="line">1. 下载解压内核  </div><div class="line">``` bash</div><div class="line"> [root@sdbserver3 ~]<span class="comment"># wget --no-check-certificate https://cdn.kernel.org/pub/linux/kernel/v3.x/linux-3.12.64.tar.xz </span></div><div class="line"> [root@sdbserver3 ~]<span class="comment"># tar -xf linux-3.12.64.tar.xz</span></div></pre></td></tr></table></figure>
-<ol>
-<li><p>更新当前系统  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># yum update    </span></div><div class="line">[root@sdbserver3 ~]<span class="comment"># yum upgrade</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>安装编译内核所需要的软件包  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># yum groupinstall "Development Tools"  </span></div><div class="line">[root@sdbserver3 ~]<span class="comment"># yum install ncurses-devel qt-devel hmaccalc zlib-devel binutils-devel elfutils-libelf-devel</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>将当前系统内核配置拷贝到解压内核的目录，并重命名为config（make oldconfig的作用是备份当前.config文件为.config.old，如若make config/menuconfig设置不当可用于恢复先前的.config。）  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># cd linux-3.12.64  </span></div><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># cp /boot/config-2.6.32-431.el6.x86_64 .config</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>配置编译项   </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># sh -c 'yes "" | make oldconfig'  </span></div><div class="line">  HOSTCC  scripts/basic/fixdep  </div><div class="line">  HOSTCC  scripts/kconfig/conf.o  </div><div class="line">  HOSTCC  scripts/kconfig/zconf.tab.o  </div><div class="line">  HOSTLD  scripts/kconfig/conf  </div><div class="line"> scripts/kconfig/conf --oldconfig Kconfig  </div><div class="line">.config:497:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> X86_INTEL_PSTATE  </div><div class="line">.config:565:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> PCCARD_NONSTATIC  </div><div class="line">.config:2730:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM8400  </div><div class="line">.config:2731:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM831X  </div><div class="line">.config:2732:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM8350  </div><div class="line">.config:2745:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM8350_I2C  </div><div class="line">.config:2747:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> AB3100_CORE  </div><div class="line">\*  </div><div class="line">\* Restart config...  </div><div class="line">\*  </div><div class="line">\*  </div><div class="line">\* General setup  </div><div class="line">\*  </div><div class="line">Cross-compiler tool prefix (CROSS_COMPILE) [] (NEW)   </div><div class="line">Compile also drivers <span class="built_in">which</span> will not load (COMPILE_TEST) [N/y/?] (NEW)   </div><div class="line">Local version - append to kernel release (LOCALVERSION) []   </div><div class="line">Automatically append version information to the version string (LOCALVERSION_AUTO) [N/y/?] n  </div><div class="line">Kernel compression mode  </div><div class="line">  1.Gzip (KERNEL_GZIP)  </div><div class="line">  2.Bzip2 (KERNEL_BZIP2)  </div><div class="line">  3.LZMA (KERNEL_LZMA)  </div><div class="line">  4.XZ (KERNEL_XZ) (NEW)  </div><div class="line">  5.LZO (KERNEL_LZO) (NEW)  </div><div class="line">  6.LZ4 (KERNEL_LZ4) (NEW)  </div><div class="line">choice[1-6?]: </div><div class="line">Default hostname (DEFAULT_HOSTNAME) [(none)] (NEW)   </div><div class="line">Support <span class="keyword">for</span> paging of anonymous memory (swap) (SWAP) [Y/n/?] y  </div><div class="line">System V IPC (SYSVIPC) [Y/n/?] y  </div><div class="line">POSIX Message Queues (POSIX_MQUEUE) [Y/n/?] y  </div><div class="line">open by fhandle syscalls (FHANDLE) [N/y/?] (NEW)  </div><div class="line">Auditing support (AUDIT) [Y/n/?] y  </div><div class="line">  Enable system-call auditing support (AUDITSYSCALL) [Y/n/?] y    </div><div class="line"> ..................  </div><div class="line"> XZ decompressor tester (XZ_DEC_TEST) [N/m/y/?] (NEW)   </div><div class="line">Averaging <span class="built_in">functions</span> (AVERAGE) [Y/?] y  </div><div class="line">CORDIC algorithm (CORDIC) [M/y/?] m  </div><div class="line">JEDEC DDR data (DDR) [N/y/?] (NEW)   </div><div class="line">Select compiled-in fonts (FONTS) [N/y/?] n  </div><div class="line"> \<span class="comment">#  </span></div><div class="line"> \<span class="comment"># configuration written to .config  </span></div><div class="line"> \<span class="comment">#</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>修改配置信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># make menuconfig</span></div><div class="line">```  </div><div class="line">选择：General Setup-&gt;Control Group Support，将下面的Menory Resource Controller <span class="keyword">for</span> Control Groups选上：  </div><div class="line">![](https://github.com/henryboss/henryboss.github.io/tree/master/images)</div><div class="line"></div><div class="line">7. 生成内核文件，编译并安装模块  </div><div class="line">``` bash</div><div class="line"> [root@sdbserver3 linux-3.12.64]<span class="comment"># make -j4 bzImage</span></div><div class="line"> [root@sdbserver3 linux-3.12.64]<span class="comment"># make -j4 modules</span></div><div class="line"> [root@sdbserver3 linux-3.12.64]<span class="comment"># make -j4 modules_install</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># make install</span></div><div class="line">scripts/kconfig/conf --silentoldconfig Kconfig</div><div class="line">.config:5096:warning: unexpected data</div><div class="line">\<span class="comment">#</span></div><div class="line">\<span class="comment"># configuration written to .config</span></div><div class="line">\<span class="comment">#</span></div><div class="line">sh /root/linux-3.12.64/arch/x86/boot/install.sh 3.12.64 arch/x86/boot/bzImage \</div><div class="line">		System.map <span class="string">"/boot"</span></div><div class="line">ERROR: modinfo: could not find module vmware_balloon</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>这里出现的错误可以不用管。</p>
-<ol>
-<li><p>修改grub,重启(修改default=0，3.12.64)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># vim /etc/grub.conf</span></div><div class="line">default=0  </div><div class="line">timeout=5  </div><div class="line">splashimage=(hd0,0)/grub/splash.xpm.gz  </div><div class="line">hiddenmenu  </div><div class="line">title CentOS (3.12.64)  </div><div class="line">        root (hd0,0)  </div><div class="line">        kernel /vmlinuz-3.12.64 ro root=/dev/mapper/vg_s62204-lv_root rd_NO_LUKS   rd_LVM_LV=vg_s62204/lv_swap LANG=en_US.UTF-8 rd_LVM_LV=vg_s62204/lv_root   rd_NO_MD SYSFONT=latarcyrheb-sun16 crashkernel=192M  KEYBOARDTYPE=pc   KEYTABLE=us rd_NO_DM rhgb quiet  </div><div class="line">        initrd /initramfs-3.12.64.img  </div><div class="line">title CentOS (2.6.32-431.el6.x86_64)  </div><div class="line">        root (hd0,0)  </div><div class="line">        kernel /vmlinuz-2.6.32-431.el6.x86_64 ro root=/dev/mapper/vg_s62204-lv_root   rd_NO_LUKS rd_LVM_LV=vg_s62204/lv_swap LANG=en_US.UTF-8 rd_LVM_LV=vg_s62204/  lv_root rd_NO_MD SYSFONT=latarcyrheb-sun16 crashkernel=192M  KEYBOARDTYPE=pc   KEYTABLE=us rd_NO_DM rhgb quiet  </div><div class="line">        initrd /initramfs-2.6.32-431.el6.x86_64.img  </div><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># reboot</span></div><div class="line">``` </div><div class="line"><span class="comment">### 下载docker</span></div><div class="line">1. 确定你的安装包是最新的</div><div class="line">```bash</div><div class="line">[root@sdbserver3 ~]<span class="comment"># yum update</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>关闭selinux</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># setenforce 0</span></div><div class="line">[root@sdbserver3 ~]<span class="comment"># sed -i '/^SELINUX=/c\SELINUX=disabled' /etc/selinux/config</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>在Fedora EPEL源中已经提供了docker-io包，下载安装epel：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># rpm -ivh http://mirrors.sohu.com/fedora-epel/6/x86_64/epel-release-6-8.noarch.rpm</span></div><div class="line">[root@sdbserver3 ~]<span class="comment"># sed -i 's/^mirrorlist=https/mirrorlist=http/' /etc/yum.repos.d/epel.repo</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>yum 安装docker-io</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># yum -y install docker-io</span></div><div class="line">[root@sdbserver3 ~]<span class="comment"># service docker start</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ol>
-<li><p>如果编译出现错误，可以使用清除重新编译</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">make mrproper         <span class="comment">#完成或者安装过程出错，可以清理上次编译的现场</span></div><div class="line">make clean</div></pre></td></tr></table></figure>
-</li>
-<li><p>启动docker的时候出现错误,需要配置第五步</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># service docker start</span></div><div class="line">Starting cgconfig service: Error: cannot mount memory to /cgroup/memory: No such file or directory</div><div class="line">/sbin/cgconfigparser; error loading /etc/cgconfig.conf: Cgroup mounting failed</div><div class="line">Failed to parse /etc/cgconfig.conf or /etc/cgconfig.d      [FAILED]</div><div class="line">Starting docker:	                                   [  OK  ]</div></pre></td></tr></table></figure>
-</li>
-<li><p>参考文章<br><a href="http://blog.csdn.net/taiyang1987912/article/details/42744019" target="_blank" rel="external">CentOS6.5升级内核到3.10.28</a><br><a href="http://www.rritw.com/a/bianchengyuyan/C__/20151118/507105.html" target="_blank" rel="external">内核升级后docker运行出错</a></p>
-</li>
-</ol>
-
+            
           
         
       
@@ -497,7 +446,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">投稿日</span>
             <time itemprop="dateCreated" datetime="2016-10-11T15:17:32+08:00" content="2016-10-11">
               2016-10-11
             </time>
@@ -585,8 +534,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/11/myblog/" itemprop="url">
-                  我的博客
+                <a class="post-title-link" href="/2016/10/11/docker/docker/" itemprop="url">
+                  docker实战（一）----docker安装
                 </a>
               
             
@@ -598,7 +547,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">投稿日</span>
             <time itemprop="dateCreated" datetime="2016-10-11T15:17:32+08:00" content="2016-10-11">
               2016-10-11
             </time>
@@ -629,7 +578,61 @@
       
         
           
-            
+            <h2 id="系统配置检查"><a href="#系统配置检查" class="headerlink" title="系统配置检查"></a>系统配置检查</h2><ul>
+<li>centos系统  </li>
+<li>64位系统  </li>
+<li>内核版本3.10及以上  </li>
+</ul>
+<h3 id="查看自己的版本信息"><a href="#查看自己的版本信息" class="headerlink" title="查看自己的版本信息"></a>查看自己的版本信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"> [root@sdbserver3 ~]<span class="comment"># uname -r    </span></div><div class="line"> 2.6.32-431.el6.x86_64  </div><div class="line">```  </div><div class="line"></div><div class="line">比如我的版本是：2.6.32  </div><div class="line">由于我的版本低于规定的版本，所以需要升级内核</div><div class="line">  </div><div class="line"><span class="comment">### 内核版本升级  </span></div><div class="line">1. 下载解压内核  </div><div class="line">``` bash</div><div class="line"> [root@sdbserver3 ~]<span class="comment"># wget --no-check-certificate https://cdn.kernel.org/pub/linux/kernel/v3.x/linux-3.12.64.tar.xz </span></div><div class="line"> [root@sdbserver3 ~]<span class="comment"># tar -xf linux-3.12.64.tar.xz</span></div></pre></td></tr></table></figure>
+<ol>
+<li><p>更新当前系统  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># yum update    </span></div><div class="line">[root@sdbserver3 ~]<span class="comment"># yum upgrade</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>安装编译内核所需要的软件包  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># yum groupinstall "Development Tools"  </span></div><div class="line">[root@sdbserver3 ~]<span class="comment"># yum install ncurses-devel qt-devel hmaccalc zlib-devel binutils-devel elfutils-libelf-devel</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>将当前系统内核配置拷贝到解压内核的目录，并重命名为config（make oldconfig的作用是备份当前.config文件为.config.old，如若make config/menuconfig设置不当可用于恢复先前的.config。）  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># cd linux-3.12.64  </span></div><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># cp /boot/config-2.6.32-431.el6.x86_64 .config</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>配置编译项   </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># sh -c 'yes "" | make oldconfig'  </span></div><div class="line">  HOSTCC  scripts/basic/fixdep  </div><div class="line">  HOSTCC  scripts/kconfig/conf.o  </div><div class="line">  HOSTCC  scripts/kconfig/zconf.tab.o  </div><div class="line">  HOSTLD  scripts/kconfig/conf  </div><div class="line"> scripts/kconfig/conf --oldconfig Kconfig  </div><div class="line">.config:497:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> X86_INTEL_PSTATE  </div><div class="line">.config:565:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> PCCARD_NONSTATIC  </div><div class="line">.config:2730:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM8400  </div><div class="line">.config:2731:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM831X  </div><div class="line">.config:2732:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM8350  </div><div class="line">.config:2745:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM8350_I2C  </div><div class="line">.config:2747:warning: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> AB3100_CORE  </div><div class="line">\*  </div><div class="line">\* Restart config...  </div><div class="line">\*  </div><div class="line">\*  </div><div class="line">\* General setup  </div><div class="line">\*  </div><div class="line">Cross-compiler tool prefix (CROSS_COMPILE) [] (NEW)   </div><div class="line">Compile also drivers <span class="built_in">which</span> will not load (COMPILE_TEST) [N/y/?] (NEW)   </div><div class="line">Local version - append to kernel release (LOCALVERSION) []   </div><div class="line">Automatically append version information to the version string (LOCALVERSION_AUTO) [N/y/?] n  </div><div class="line">Kernel compression mode  </div><div class="line">  1.Gzip (KERNEL_GZIP)  </div><div class="line">  2.Bzip2 (KERNEL_BZIP2)  </div><div class="line">  3.LZMA (KERNEL_LZMA)  </div><div class="line">  4.XZ (KERNEL_XZ) (NEW)  </div><div class="line">  5.LZO (KERNEL_LZO) (NEW)  </div><div class="line">  6.LZ4 (KERNEL_LZ4) (NEW)  </div><div class="line">choice[1-6?]: </div><div class="line">Default hostname (DEFAULT_HOSTNAME) [(none)] (NEW)   </div><div class="line">Support <span class="keyword">for</span> paging of anonymous memory (swap) (SWAP) [Y/n/?] y  </div><div class="line">System V IPC (SYSVIPC) [Y/n/?] y  </div><div class="line">POSIX Message Queues (POSIX_MQUEUE) [Y/n/?] y  </div><div class="line">open by fhandle syscalls (FHANDLE) [N/y/?] (NEW)  </div><div class="line">Auditing support (AUDIT) [Y/n/?] y  </div><div class="line">  Enable system-call auditing support (AUDITSYSCALL) [Y/n/?] y    </div><div class="line"> ..................  </div><div class="line"> XZ decompressor tester (XZ_DEC_TEST) [N/m/y/?] (NEW)   </div><div class="line">Averaging <span class="built_in">functions</span> (AVERAGE) [Y/?] y  </div><div class="line">CORDIC algorithm (CORDIC) [M/y/?] m  </div><div class="line">JEDEC DDR data (DDR) [N/y/?] (NEW)   </div><div class="line">Select compiled-in fonts (FONTS) [N/y/?] n  </div><div class="line"> \<span class="comment">#  </span></div><div class="line"> \<span class="comment"># configuration written to .config  </span></div><div class="line"> \<span class="comment">#</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># make menuconfig</span></div><div class="line">```  </div><div class="line">选择：General Setup-&gt;Control Group Support，将下面的Menory Resource Controller <span class="keyword">for</span> Control Groups选上：  </div><div class="line">![](https://github.com/henryboss/henryboss.github.io/tree/master/images)</div><div class="line"></div><div class="line">core netfilter configuration</div><div class="line">iP:netfilter configuraton</div><div class="line"></div><div class="line">7. 生成内核文件，编译并安装模块  </div><div class="line">``` bash</div><div class="line"> [root@sdbserver3 linux-3.12.64]<span class="comment"># make -j4 bzImage</span></div><div class="line"> [root@sdbserver3 linux-3.12.64]<span class="comment"># make -j4 modules</span></div><div class="line"> [root@sdbserver3 linux-3.12.64]<span class="comment"># make -j4 modules_install</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># make install</span></div><div class="line">scripts/kconfig/conf --silentoldconfig Kconfig</div><div class="line">.config:5096:warning: unexpected data</div><div class="line">\<span class="comment">#</span></div><div class="line">\<span class="comment"># configuration written to .config</span></div><div class="line">\<span class="comment">#</span></div><div class="line">sh /root/linux-3.12.64/arch/x86/boot/install.sh 3.12.64 arch/x86/boot/bzImage \</div><div class="line">		System.map <span class="string">"/boot"</span></div><div class="line">ERROR: modinfo: could not find module vmware_balloon</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这里出现的错误可以不用管。</p>
+<ol>
+<li><p>修改grub,重启(修改default=0，3.12.64)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># vim /etc/grub.conf</span></div><div class="line">default=0  </div><div class="line">timeout=5  </div><div class="line">splashimage=(hd0,0)/grub/splash.xpm.gz  </div><div class="line">hiddenmenu  </div><div class="line">title CentOS (3.12.64)  </div><div class="line">        root (hd0,0)  </div><div class="line">        kernel /vmlinuz-3.12.64 ro root=/dev/mapper/vg_s62204-lv_root rd_NO_LUKS   rd_LVM_LV=vg_s62204/lv_swap LANG=en_US.UTF-8 rd_LVM_LV=vg_s62204/lv_root   rd_NO_MD SYSFONT=latarcyrheb-sun16 crashkernel=192M  KEYBOARDTYPE=pc   KEYTABLE=us rd_NO_DM rhgb quiet  </div><div class="line">        initrd /initramfs-3.12.64.img  </div><div class="line">title CentOS (2.6.32-431.el6.x86_64)  </div><div class="line">        root (hd0,0)  </div><div class="line">        kernel /vmlinuz-2.6.32-431.el6.x86_64 ro root=/dev/mapper/vg_s62204-lv_root   rd_NO_LUKS rd_LVM_LV=vg_s62204/lv_swap LANG=en_US.UTF-8 rd_LVM_LV=vg_s62204/  lv_root rd_NO_MD SYSFONT=latarcyrheb-sun16 crashkernel=192M  KEYBOARDTYPE=pc   KEYTABLE=us rd_NO_DM rhgb quiet  </div><div class="line">        initrd /initramfs-2.6.32-431.el6.x86_64.img  </div><div class="line">[root@sdbserver3 linux-3.12.64]<span class="comment"># reboot</span></div><div class="line">``` </div><div class="line"><span class="comment">### 下载docker</span></div><div class="line">1. 确定你的安装包是最新的</div><div class="line">```bash</div><div class="line">[root@sdbserver3 ~]<span class="comment"># yum update</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>关闭selinux</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># setenforce 0</span></div><div class="line">[root@sdbserver3 ~]<span class="comment"># sed -i '/^SELINUX=/c\SELINUX=disabled' /etc/selinux/config</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>在Fedora EPEL源中已经提供了docker-io包，下载安装epel：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># rpm -ivh http://mirrors.sohu.com/fedora-epel/6/x86_64/epel-release-6-8.noarch.rpm</span></div><div class="line">[root@sdbserver3 ~]<span class="comment"># sed -i 's/^mirrorlist=https/mirrorlist=http/' /etc/yum.repos.d/epel.repo</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>yum 安装docker-io</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># yum -y install docker-io</span></div><div class="line">[root@sdbserver3 ~]<span class="comment"># service docker start</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>d</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">root@sdbserver3 linux-3.12.64]<span class="comment"># docker -d</span></div><div class="line">INFO[0000] Listening <span class="keyword">for</span> HTTP on unix (/var/run/docker.sock) </div><div class="line">INFO[0000] [graphdriver] using prior storage driver <span class="string">"devicemapper"</span> </div><div class="line">WARN[0000] Running modprobe bridge nf_nat failed with message: , error: <span class="built_in">exit</span> status 1 </div><div class="line">FATA[0000] Error starting daemon: Error initializing network controller: Error creating default <span class="string">"bridge"</span> network: Failed to Setup IP tables: Unable to <span class="built_in">enable</span> NAT rule: iptables failed: iptables -t nat -I POSTROUTING <span class="_">-s</span> 172.17.42.1/16 ! -o docker0 -j MASQUERADE: iptables v1.4.7: can<span class="string">'t initialize iptables table `nat'</span>: Table does not exist (<span class="keyword">do</span> you need to insmod?)</div><div class="line">Perhaps iptables or your kernel needs to be upgraded.</div><div class="line"> (<span class="built_in">exit</span> status 3)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ol>
+<li><p>如果编译出现错误，可以使用清除重新编译</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">make mrproper         <span class="comment">#完成或者安装过程出错，可以清理上次编译的现场</span></div><div class="line">make clean</div></pre></td></tr></table></figure>
+</li>
+<li><p>启动docker的时候出现错误,需要配置第五步</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[root@sdbserver3 ~]<span class="comment"># service docker start</span></div><div class="line">Starting cgconfig service: Error: cannot mount memory to /cgroup/memory: No such file or directory</div><div class="line">/sbin/cgconfigparser; error loading /etc/cgconfig.conf: Cgroup mounting failed</div><div class="line">Failed to parse /etc/cgconfig.conf or /etc/cgconfig.d      [FAILED]</div><div class="line">Starting docker:	                                   [  OK  ]</div></pre></td></tr></table></figure>
+</li>
+<li><p>参考文章<br><a href="http://blog.csdn.net/taiyang1987912/article/details/42744019" target="_blank" rel="external">CentOS6.5升级内核到3.10.28</a><br><a href="http://www.rritw.com/a/bianchengyuyan/C__/20151118/507105.html" target="_blank" rel="external">内核升级后docker运行出错</a></p>
+</li>
+</ol>
+
           
         
       
@@ -699,7 +702,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">4</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">ポスト</span>
             </a>
           </div>
 
@@ -709,7 +712,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">タグ</span>
               </a>
             </div>
           
@@ -753,7 +756,7 @@
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
