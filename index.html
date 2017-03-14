@@ -171,7 +171,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-            Accueil
+            Startseite
           </a>
         </li>
       
@@ -179,7 +179,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -238,7 +238,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/14/hello-world/" itemprop="url">
+                <a class="post-title-link" href="/2017/03/14/others/hello-world/" itemprop="url">
                   Hello World
                 </a>
               
@@ -251,8 +251,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posté le</span>
-            <time itemprop="dateCreated" datetime="2017-03-14T15:33:19+08:00" content="2017-03-14">
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2017-03-14T15:44:15+08:00" content="2017-03-14">
               2017-03-14
             </time>
           </span>
@@ -340,200 +340,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/11/hexo/" itemprop="url">
-                  github的ssh-keygen
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posté le</span>
-            <time itemprop="dateCreated" datetime="2016-10-11T15:17:32+08:00" content="2016-10-11">
-              2016-10-11
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">Generating SSH keys</a></li>
-<li><a href="https://help.github.com/articles/error-permission-denied-publickey/" target="_blank" rel="external">Error: Permission denied (publickey)</a><h2 id="查看本地是否已经存在"><a href="#查看本地是否已经存在" class="headerlink" title="查看本地是否已经存在"></a>查看本地是否已经存在</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div><div class="line">```  </div><div class="line"><span class="comment">## 不存在则生成</span></div><div class="line">``` bash</div><div class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"你的邮箱"</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="生成文件后保存在本地"><a href="#生成文件后保存在本地" class="headerlink" title="生成文件后保存在本地"></a>生成文件后保存在本地</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Your identification has been saved <span class="keyword">in</span> /z/.ssh/id_rsa.  </div><div class="line">Your public key has been saved <span class="keyword">in</span> /z/.ssh/id_rsa.pub.</div></pre></td></tr></table></figure>
-<h2 id="添加到ssh-agent"><a href="#添加到ssh-agent" class="headerlink" title="添加到ssh-agent"></a>添加到ssh-agent</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">eval</span> <span class="string">"<span class="variable">$(ssh-agent -s)</span>"</span>  </div><div class="line">ssh-add ~/.ssh/id_rsa</div></pre></td></tr></table></figure>
-<h2 id="添加到自己的github帐号"><a href="#添加到自己的github帐号" class="headerlink" title="添加到自己的github帐号"></a>添加到自己的github帐号</h2><p>github官网这里写的比较详细:<br><a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="external">Adding a new SSH key to your GitHub account</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/11/myblog/" itemprop="url">
-                  我的博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posté le</span>
-            <time itemprop="dateCreated" datetime="2016-10-11T15:17:32+08:00" content="2016-10-11">
-              2016-10-11
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/10/11/docker/docker/" itemprop="url">
                   docker实战（一）----docker安装
                 </a>
@@ -547,7 +353,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posté le</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-10-11T15:17:32+08:00" content="2016-10-11">
               2016-10-11
             </time>
@@ -660,6 +466,200 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/11/others/myblog/" itemprop="url">
+                  我的博客
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-10-11T15:17:32+08:00" content="2016-10-11">
+              2016-10-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/11/others/hexo/" itemprop="url">
+                  github的ssh-keygen
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-10-11T15:17:32+08:00" content="2016-10-11">
+              2016-10-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">Generating SSH keys</a></li>
+<li><a href="https://help.github.com/articles/error-permission-denied-publickey/" target="_blank" rel="external">Error: Permission denied (publickey)</a><h2 id="查看本地是否已经存在"><a href="#查看本地是否已经存在" class="headerlink" title="查看本地是否已经存在"></a>查看本地是否已经存在</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div><div class="line">```  </div><div class="line"><span class="comment">## 不存在则生成</span></div><div class="line">``` bash</div><div class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"你的邮箱"</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="生成文件后保存在本地"><a href="#生成文件后保存在本地" class="headerlink" title="生成文件后保存在本地"></a>生成文件后保存在本地</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Your identification has been saved <span class="keyword">in</span> /z/.ssh/id_rsa.  </div><div class="line">Your public key has been saved <span class="keyword">in</span> /z/.ssh/id_rsa.pub.</div></pre></td></tr></table></figure>
+<h2 id="添加到ssh-agent"><a href="#添加到ssh-agent" class="headerlink" title="添加到ssh-agent"></a>添加到ssh-agent</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">eval</span> <span class="string">"<span class="variable">$(ssh-agent -s)</span>"</span>  </div><div class="line">ssh-add ~/.ssh/id_rsa</div></pre></td></tr></table></figure>
+<h2 id="添加到自己的github帐号"><a href="#添加到自己的github帐号" class="headerlink" title="添加到自己的github帐号"></a>添加到自己的github帐号</h2><p>github官网这里写的比较详细:<br><a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="external">Adding a new SSH key to your GitHub account</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -702,7 +702,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">4</span>
-              <span class="site-state-item-name">articles</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -712,7 +712,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -756,11 +756,11 @@
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Thème -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
