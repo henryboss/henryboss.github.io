@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="technology,github," />
+  <meta name="keywords" content="php,wechat," />
 
 
 
@@ -84,28 +84,34 @@
 
 
 
-<meta name="description" content="Generating SSH keys
-Error: Permission denied (publickey)查看本地是否已经存在12345ls -al ~/.ssh```  ## 不存在则生成``` bashssh-keygen -t rsa -b 4096 -C &quot;你的邮箱&quot;
+<meta name="description" content="#PC代理授权登录
+WeChatLogin Proxy
+参考这个原理当我们要统一几个网站的登录管理时，我们可以使用代理来分发。此时我们只需对上一章的代码做简单的修改即可。
 
+##How to achieve
 
-生成文件后保存在本地12Your identification has been saved in /z/.s">
+将 https://github.com/liuyunzhuge/php_weixin_proxy/blob/master/index.php 该文件部署在与微信进行通信的域名上，为了方便，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="github的ssh-keygen">
-<meta property="og:url" content="http://yoursite.com/2016/10/11/others/hexo/index.html">
+<meta property="og:title" content="微信登录授权(二)">
+<meta property="og:url" content="http://yoursite.com/2017/03/14/wechat/WeChatLogin2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Generating SSH keys
-Error: Permission denied (publickey)查看本地是否已经存在12345ls -al ~/.ssh```  ## 不存在则生成``` bashssh-keygen -t rsa -b 4096 -C &quot;你的邮箱&quot;
+<meta property="og:description" content="#PC代理授权登录
+WeChatLogin Proxy
+参考这个原理当我们要统一几个网站的登录管理时，我们可以使用代理来分发。此时我们只需对上一章的代码做简单的修改即可。
 
+##How to achieve
 
-生成文件后保存在本地12Your identification has been saved in /z/.s">
-<meta property="og:updated_time" content="2016-10-20T06:21:52.000Z">
+将 https://github.com/liuyunzhuge/php_weixin_proxy/blob/master/index.php 该文件部署在与微信进行通信的域名上，为了方便，">
+<meta property="og:updated_time" content="2017-03-14T09:18:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="github的ssh-keygen">
-<meta name="twitter:description" content="Generating SSH keys
-Error: Permission denied (publickey)查看本地是否已经存在12345ls -al ~/.ssh```  ## 不存在则生成``` bashssh-keygen -t rsa -b 4096 -C &quot;你的邮箱&quot;
+<meta name="twitter:title" content="微信登录授权(二)">
+<meta name="twitter:description" content="#PC代理授权登录
+WeChatLogin Proxy
+参考这个原理当我们要统一几个网站的登录管理时，我们可以使用代理来分发。此时我们只需对上一章的代码做简单的修改即可。
 
+##How to achieve
 
-生成文件后保存在本地12Your identification has been saved in /z/.s">
+将 https://github.com/liuyunzhuge/php_weixin_proxy/blob/master/index.php 该文件部署在与微信进行通信的域名上，为了方便，">
 
 
 
@@ -126,10 +132,10 @@ Error: Permission denied (publickey)查看本地是否已经存在12345ls -al ~/
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/11/others/hexo/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/14/wechat/WeChatLogin2/"/>
 
 
-  <title> github的ssh-keygen | Hexo </title>
+  <title> 微信登录授权(二) | Hexo </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="">
@@ -251,7 +257,7 @@ Error: Permission denied (publickey)查看本地是否已经存在12345ls -al ~/
             
             
               
-                github的ssh-keygen
+                微信登录授权(二)
               
             
           </h1>
@@ -263,8 +269,8 @@ Error: Permission denied (publickey)查看本地是否已经存在12345ls -al ~/
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-10-11T15:17:32+08:00" content="2016-10-11">
-              2016-10-11
+            <time itemprop="dateCreated" datetime="2017-03-14T00:00:00+08:00" content="2017-03-14">
+              2017-03-14
             </time>
           </span>
 
@@ -291,14 +297,15 @@ Error: Permission denied (publickey)查看本地是否已经存在12345ls -al ~/
       
 
       
-        <ul>
-<li><a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">Generating SSH keys</a></li>
-<li><a href="https://help.github.com/articles/error-permission-denied-publickey/" target="_blank" rel="external">Error: Permission denied (publickey)</a><h2 id="查看本地是否已经存在"><a href="#查看本地是否已经存在" class="headerlink" title="查看本地是否已经存在"></a>查看本地是否已经存在</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div><div class="line">```  </div><div class="line"><span class="comment">## 不存在则生成</span></div><div class="line">``` bash</div><div class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"你的邮箱"</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="生成文件后保存在本地"><a href="#生成文件后保存在本地" class="headerlink" title="生成文件后保存在本地"></a>生成文件后保存在本地</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Your identification has been saved <span class="keyword">in</span> /z/.ssh/id_rsa.  </div><div class="line">Your public key has been saved <span class="keyword">in</span> /z/.ssh/id_rsa.pub.</div></pre></td></tr></table></figure>
-<h2 id="添加到ssh-agent"><a href="#添加到ssh-agent" class="headerlink" title="添加到ssh-agent"></a>添加到ssh-agent</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">eval</span> <span class="string">"<span class="variable">$(ssh-agent -s)</span>"</span>  </div><div class="line">ssh-add ~/.ssh/id_rsa</div></pre></td></tr></table></figure>
-<h2 id="添加到自己的github帐号"><a href="#添加到自己的github帐号" class="headerlink" title="添加到自己的github帐号"></a>添加到自己的github帐号</h2><p>github官网这里写的比较详细:<br><a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="external">Adding a new SSH key to your GitHub account</a></p>
+        <p>#PC代理授权登录</p>
+<h2 id="WeChatLogin-Proxy"><a href="#WeChatLogin-Proxy" class="headerlink" title="WeChatLogin Proxy"></a>WeChatLogin Proxy</h2><blockquote>
+<p>参考这个<a href="https://github.com/liuyunzhuge/php_weixin_proxy" target="_blank" rel="external">原理</a><br>当我们要统一几个网站的登录管理时，我们可以使用代理来分发。<br>此时我们只需对上一章的代码做简单的修改即可。</p>
+</blockquote>
+<p>##How to achieve</p>
+<ol>
+<li>将 <a href="https://github.com/liuyunzhuge/php_weixin_proxy/blob/master/index.php" target="_blank" rel="external">https://github.com/liuyunzhuge/php_weixin_proxy/blob/master/index.php</a> 该文件部署在与微信进行通信的域名上，为了方便，我们在此将他命名为proxy.php</li>
+<li>修改上一章调用微信登录类的代码，只需添加两行代码  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//设置配置参数</div><div class="line"><span class="variable">$config</span> = array(<span class="string">"app_key"</span>=&gt;<span class="string">"你的app_key"</span>,<span class="string">"app_secret"</span>=&gt;<span class="string">"你的app_secret"</span>);</div><div class="line"><span class="variable">$w</span> =new WeChatOth2(<span class="variable">$config</span>);</div><div class="line"><span class="variable">$w</span>-&gt;authorizeURL = <span class="string">"http://域名/proxy.php"</span>;//将地址重定向proxy.php</div><div class="line"></div><div class="line"><span class="keyword">if</span>(empty(<span class="variable">$_REQUEST</span>[<span class="string">'code'</span>]))&#123;</div><div class="line">	setcookie(<span class="string">"redirect_uri"</span>,<span class="string">'http://'</span>.<span class="variable">$_SERVER</span>[<span class="string">'HTTP_HOST'</span>].<span class="variable">$_SERVER</span>[<span class="string">'REQUEST_URI'</span>]);//为了使proxy能重定向到当前网址    </div><div class="line">//获取code，返回微信登录链接（二维码）</div><div class="line">    <span class="variable">$url</span> = <span class="variable">$w</span>-&gt;actionLogin(<span class="string">'http://'</span>.<span class="variable">$_SERVER</span>[<span class="string">'HTTP_HOST'</span>].<span class="variable">$_SERVER</span>[<span class="string">'REQUEST_URI'</span>]);</div><div class="line">    header(<span class="string">"Location:"</span>.<span class="variable">$url</span>);</div><div class="line">    <span class="built_in">exit</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 用户允许授权后，将会重定向到redirect_uri的网址上，并且带上code和state参数</div><div class="line"> **/</div><div class="line"></div><div class="line"><span class="variable">$access</span> = <span class="variable">$w</span>-&gt;getAccessToken();//通过code获取access_token</div><div class="line"><span class="variable">$w</span>-&gt;<span class="built_in">set</span>AccessToken(<span class="variable">$access</span>);//设置access_token</div><div class="line"></div><div class="line">//用access_token换取用户个人信息</div><div class="line"><span class="variable">$user_info</span> = <span class="variable">$w</span>-&gt;getMessage();</div><div class="line">var_dump(<span class="variable">$user_info</span>);</div></pre></td></tr></table></figure></li>
+</ol>
 
       
     </div>
@@ -321,9 +328,9 @@ Error: Permission denied (publickey)查看本地是否已经存在12345ls -al ~/
       
         <div class="post-tags">
           
-            <a href="/tags/technology/" rel="tag">#technology</a>
+            <a href="/tags/php/" rel="tag">#php</a>
           
-            <a href="/tags/github/" rel="tag">#github</a>
+            <a href="/tags/wechat/" rel="tag">#wechat</a>
           
         </div>
       
@@ -332,16 +339,16 @@ Error: Permission denied (publickey)查看本地是否已经存在12345ls -al ~/
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/11/others/myblog/" rel="next" title="我的博客">
-                <i class="fa fa-chevron-left"></i> 我的博客
+              <a href="/2017/03/13/wechat/WeChatLogin1/" rel="next" title="微信登录授权(一)">
+                <i class="fa fa-chevron-left"></i> 微信登录授权(一)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/11/docker/docker/" rel="prev" title="docker实战（一）----docker安装">
-                docker实战（一）----docker安装 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/14/others/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -449,7 +456,7 @@ Error: Permission denied (publickey)查看本地是否已经存在12345ls -al ~/
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看本地是否已经存在"><span class="nav-number">1.</span> <span class="nav-text">查看本地是否已经存在</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成文件后保存在本地"><span class="nav-number">2.</span> <span class="nav-text">生成文件后保存在本地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加到ssh-agent"><span class="nav-number">3.</span> <span class="nav-text">添加到ssh-agent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加到自己的github帐号"><span class="nav-number">4.</span> <span class="nav-text">添加到自己的github帐号</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WeChatLogin-Proxy"><span class="nav-number">1.</span> <span class="nav-text">WeChatLogin Proxy</span></a></li></ol></div>
             
           </div>
         </section>

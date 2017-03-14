@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -96,7 +96,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Muse',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -252,7 +252,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2017-03-14T15:44:15+08:00" content="2017-03-14">
+            <time itemprop="dateCreated" datetime="2017-03-14T17:24:02+08:00" content="2017-03-14">
               2017-03-14
             </time>
           </span>
@@ -292,6 +292,216 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/14/wechat/WeChatLogin2/" itemprop="url">
+                  微信登录授权(二)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2017-03-14T00:00:00+08:00" content="2017-03-14">
+              2017-03-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#PC代理授权登录</p>
+<h2 id="WeChatLogin-Proxy"><a href="#WeChatLogin-Proxy" class="headerlink" title="WeChatLogin Proxy"></a>WeChatLogin Proxy</h2><blockquote>
+<p>参考这个<a href="https://github.com/liuyunzhuge/php_weixin_proxy" target="_blank" rel="external">原理</a><br>当我们要统一几个网站的登录管理时，我们可以使用代理来分发。<br>此时我们只需对上一章的代码做简单的修改即可。</p>
+</blockquote>
+<p>##How to achieve</p>
+<ol>
+<li>将 <a href="https://github.com/liuyunzhuge/php_weixin_proxy/blob/master/index.php" target="_blank" rel="external">https://github.com/liuyunzhuge/php_weixin_proxy/blob/master/index.php</a> 该文件部署在与微信进行通信的域名上，为了方便，我们在此将他命名为proxy.php</li>
+<li>修改上一章调用微信登录类的代码，只需添加两行代码  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//设置配置参数</div><div class="line"><span class="variable">$config</span> = array(<span class="string">"app_key"</span>=&gt;<span class="string">"你的app_key"</span>,<span class="string">"app_secret"</span>=&gt;<span class="string">"你的app_secret"</span>);</div><div class="line"><span class="variable">$w</span> =new WeChatOth2(<span class="variable">$config</span>);</div><div class="line"><span class="variable">$w</span>-&gt;authorizeURL = <span class="string">"http://域名/proxy.php"</span>;//将地址重定向proxy.php</div><div class="line"></div><div class="line"><span class="keyword">if</span>(empty(<span class="variable">$_REQUEST</span>[<span class="string">'code'</span>]))&#123;</div><div class="line">	setcookie(<span class="string">"redirect_uri"</span>,<span class="string">'http://'</span>.<span class="variable">$_SERVER</span>[<span class="string">'HTTP_HOST'</span>].<span class="variable">$_SERVER</span>[<span class="string">'REQUEST_URI'</span>]);//为了使proxy能重定向到当前网址    </div><div class="line">//获取code，返回微信登录链接（二维码）</div><div class="line">    <span class="variable">$url</span> = <span class="variable">$w</span>-&gt;actionLogin(<span class="string">'http://'</span>.<span class="variable">$_SERVER</span>[<span class="string">'HTTP_HOST'</span>].<span class="variable">$_SERVER</span>[<span class="string">'REQUEST_URI'</span>]);</div><div class="line">    header(<span class="string">"Location:"</span>.<span class="variable">$url</span>);</div><div class="line">    <span class="built_in">exit</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 用户允许授权后，将会重定向到redirect_uri的网址上，并且带上code和state参数</div><div class="line"> **/</div><div class="line"></div><div class="line"><span class="variable">$access</span> = <span class="variable">$w</span>-&gt;getAccessToken();//通过code获取access_token</div><div class="line"><span class="variable">$w</span>-&gt;<span class="built_in">set</span>AccessToken(<span class="variable">$access</span>);//设置access_token</div><div class="line"></div><div class="line">//用access_token换取用户个人信息</div><div class="line"><span class="variable">$user_info</span> = <span class="variable">$w</span>-&gt;getMessage();</div><div class="line">var_dump(<span class="variable">$user_info</span>);</div></pre></td></tr></table></figure></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/13/wechat/WeChatLogin1/" itemprop="url">
+                  微信登录授权(一)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2017-03-13T00:00:00+08:00" content="2017-03-13">
+              2017-03-13
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#PC授权登录</p>
+<h2 id="Logical-Analyses"><a href="#Logical-Analyses" class="headerlink" title="Logical Analyses"></a>Logical Analyses</h2><blockquote>
+<p>Refer to <a href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=open1419316505&amp;token=&amp;lang=zh_CN" target="_blank" rel="external">Wechat documentation</a> , I get these infomations</p>
+<ol>
+<li>第一步：用户同意授权，获取code</li>
+<li>第二步：通过code换取网页授权access_token</li>
+<li>第三步：刷新access_token（如果需要）</li>
+<li>第四步：拉取用户信息(需scope为 snsapi_login)</li>
+<li>附：检验授权凭证（access_token）是否有效 </li>
+</ol>
+<p>the diagram<br><img src="https://res.wx.qq.com/open/zh_CN/htmledition/res/img/pic/web-wxlogin/12168b9.png" alt="获取access_token时序图"></p>
+</blockquote>
+<h2 id="WeChat-class"><a href="#WeChat-class" class="headerlink" title="WeChat class"></a>WeChat class</h2><p>According to these steps , I bulid a class to encapsulating code as follows. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div></pre></td><td class="code"><pre><div class="line">class WeChatOth2 &#123;</div><div class="line">    private <span class="variable">$token</span>;</div><div class="line">    private <span class="variable">$error_msg</span>;</div><div class="line">    private <span class="variable">$parameter</span> = array();</div><div class="line">    private <span class="variable">$authorizeURL</span>;//微信请求地址</div><div class="line">    private <span class="variable">$app_key</span>;</div><div class="line">    private <span class="variable">$app_secret</span>;</div><div class="line">    private <span class="variable">$connectTimeOut</span> = 30;//连接超时设置</div><div class="line">    private <span class="variable">$timeOut</span> = 60;//允许最大连接时间</div><div class="line"></div><div class="line">    public <span class="keyword">function</span> __construct(<span class="variable">$config</span>)&#123;</div><div class="line">        <span class="variable">$this</span>-&gt;website(<span class="variable">$config</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public <span class="keyword">function</span> __set(<span class="variable">$property</span>,<span class="variable">$value</span>)&#123;</div><div class="line">        <span class="variable">$this</span>-&gt;<span class="variable">$property</span> = <span class="variable">$value</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public <span class="keyword">function</span> __get(<span class="variable">$property</span>)&#123;</div><div class="line">        <span class="built_in">return</span> <span class="variable">$this</span>-&gt;<span class="variable">$property</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //设置参数</div><div class="line">    private <span class="keyword">function</span> website(<span class="variable">$config</span>)&#123;</div><div class="line">        <span class="variable">$state</span> = md5(mktime()+rand(0,999));//生成随机数</div><div class="line">        <span class="variable">$_SESSION</span>[<span class="string">'WeChat_state'</span>] = <span class="variable">$state</span>;</div><div class="line">        <span class="variable">$this</span>-&gt;authorizeURL = <span class="string">"https://open.weixin.qq.com/connect/qrconnect"</span>;</div><div class="line">        <span class="variable">$this</span>-&gt;app_key = <span class="variable">$config</span>[<span class="string">'app_key'</span>];</div><div class="line">        <span class="variable">$this</span>-&gt;app_secret = <span class="variable">$config</span>[<span class="string">'app_secret'</span>];</div><div class="line">        <span class="variable">$this</span>-&gt;parameter = array(</div><div class="line">            <span class="string">"redirect_uri"</span>=&gt;<span class="string">''</span>,</div><div class="line">            <span class="string">"response_type"</span> =&gt; <span class="string">"code"</span>,</div><div class="line">            <span class="string">"scope"</span> =&gt; <span class="string">"snsapi_login"</span>,</div><div class="line">            <span class="string">'state'</span> =&gt; <span class="variable">$state</span></div><div class="line">        );</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //拼接参数</div><div class="line">    public <span class="keyword">function</span> actionLogin(<span class="variable">$redirect_uri</span>=<span class="string">''</span>)&#123;</div><div class="line">        <span class="variable">$url</span> = <span class="variable">$this</span>-&gt;authorizeURL.<span class="string">'?'</span>;</div><div class="line">        <span class="variable">$url</span> .= <span class="string">"appid="</span>.<span class="variable">$this</span>-&gt;app_key;</div><div class="line">        <span class="keyword">if</span>(!empty(<span class="variable">$redirect_uri</span>))&#123;</div><div class="line">            <span class="variable">$this</span>-&gt;parameter[<span class="string">'redirect_uri'</span>] = <span class="variable">$redirect_uri</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="variable">$url</span> .= <span class="string">'&amp;'</span>.http_build_query(<span class="variable">$this</span>-&gt;parameter);</div><div class="line">        <span class="built_in">return</span> <span class="variable">$url</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //获取access_token</div><div class="line">    public <span class="keyword">function</span> <span class="function"><span class="title">getAccessToken</span></span>()&#123;</div><div class="line">        <span class="variable">$code</span> = empty(<span class="variable">$_REQUEST</span>[<span class="string">'code'</span>])?<span class="string">''</span>:<span class="variable">$_REQUEST</span>[<span class="string">'code'</span>];</div><div class="line">        <span class="variable">$url</span> = sprintf(<span class="string">'https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&amp;secret=%s&amp;code=%s&amp;grant_type=authorization_code'</span>,<span class="variable">$this</span>-&gt;app_key,<span class="variable">$this</span>-&gt;app_secret,<span class="variable">$code</span>);</div><div class="line">        <span class="variable">$result</span> = <span class="variable">$this</span>-&gt;httpRequest(<span class="variable">$url</span>);</div><div class="line">        <span class="variable">$result_arr</span> = json_decode(<span class="variable">$result</span>,<span class="literal">true</span>);</div><div class="line">        <span class="keyword">if</span>(isset(<span class="variable">$result_arr</span>[<span class="string">'errcode'</span>]))&#123;</div><div class="line">            <span class="variable">$this</span>-&gt;error_msg = <span class="variable">$result_arr</span>[<span class="string">'errmsg'</span>];</div><div class="line">        &#125;</div><div class="line">        <span class="variable">$token</span> = <span class="variable">$result_arr</span>[<span class="string">'access_token'</span>];</div><div class="line">        <span class="variable">$openid</span> = <span class="variable">$result_arr</span>[<span class="string">'openid'</span>];</div><div class="line">        <span class="variable">$_SESSION</span>[<span class="string">'openid'</span>] = <span class="variable">$openid</span>;</div><div class="line">        <span class="built_in">return</span> <span class="variable">$token</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //设置access_token</div><div class="line">    public <span class="keyword">function</span> <span class="built_in">set</span>AccessToken(<span class="variable">$token</span>)&#123;</div><div class="line">        <span class="variable">$this</span>-&gt;token = <span class="variable">$token</span>;</div><div class="line">        <span class="built_in">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //用access_token换取用户个人信息</div><div class="line">    <span class="keyword">function</span> <span class="function"><span class="title">getMessage</span></span>()</div><div class="line">    &#123;</div><div class="line">        <span class="variable">$url</span> = sprintf(<span class="string">'https://api.weixin.qq.com/sns/userinfo?access_token=%s&amp;openid=%s'</span>,<span class="variable">$this</span>-&gt;token,<span class="variable">$_SESSION</span>[<span class="string">'openid'</span>]);</div><div class="line">        <span class="variable">$result</span> = <span class="variable">$this</span>-&gt;httpRequest(<span class="variable">$url</span>);</div><div class="line">        <span class="variable">$result_arr</span> = json_decode(<span class="variable">$result</span>,<span class="literal">true</span>);</div><div class="line">        <span class="built_in">return</span> <span class="variable">$result_arr</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private <span class="keyword">function</span> httpRequest(<span class="variable">$url</span>)&#123;</div><div class="line">        //判断是否支持curl</div><div class="line">        <span class="keyword">if</span>(!function_exists(<span class="string">"curl_init"</span>))&#123;</div><div class="line">            <span class="variable">$this</span>-&gt;error_msg = <span class="string">"not support curl"</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="variable">$curl_init</span> = curl_init(<span class="variable">$url</span>);</div><div class="line">        curl_setopt(<span class="variable">$curl_init</span>,CURLOPT_HTTP_VERSION,CURL_HTTP_VERSION_1_0);</div><div class="line">        curl_setopt(<span class="variable">$curl_init</span>,CURLOPT_CONNECTTIMEOUT,<span class="variable">$this</span>-&gt;connectTimeOut);</div><div class="line">        curl_setopt(<span class="variable">$curl_init</span>,CURLOPT_TIMEOUT,<span class="variable">$this</span>-&gt;timeOut);</div><div class="line">        curl_setopt(<span class="variable">$curl_init</span>,CURLOPT_RETURNTRANSFER,<span class="literal">true</span>);</div><div class="line">        curl_setopt(<span class="variable">$curl_init</span>,CURLOPT_ENCODING,<span class="string">""</span>);</div><div class="line">        curl_setopt(<span class="variable">$curl_init</span>,CURLOPT_SSL_VERIFYPEER,<span class="literal">false</span>);//无需对证书进行验证</div><div class="line">        curl_setopt(<span class="variable">$curl_init</span>,CURLOPT_HEADER,<span class="literal">false</span>);</div><div class="line">        curl_setopt(<span class="variable">$curl_init</span>,CURLOPT_URL,<span class="variable">$url</span>);</div><div class="line">        <span class="variable">$response</span> = curl_exec(<span class="variable">$curl_init</span>);</div><div class="line">        curl_close(<span class="variable">$curl_init</span>);</div><div class="line">        <span class="built_in">return</span> <span class="variable">$response</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public <span class="keyword">function</span> <span class="function"><span class="title">getError</span></span>()&#123;</div><div class="line">        die(<span class="variable">$this</span>-&gt;error_msg);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="How-to-use-this-class"><a href="#How-to-use-this-class" class="headerlink" title="How to use this class"></a>How to use this class</h2><p>And call the class as below.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//设置配置参数</div><div class="line"><span class="variable">$config</span> = array(<span class="string">"app_key"</span>=&gt;<span class="string">"你的app_key"</span>,<span class="string">"app_secret"</span>=&gt;<span class="string">"你的app_secret"</span>);</div><div class="line"><span class="variable">$w</span> =new WeChatOth2(<span class="variable">$config</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(empty(<span class="variable">$_REQUEST</span>[<span class="string">'code'</span>]))&#123;</div><div class="line">//获取code，返回微信登录链接（二维码）</div><div class="line">    <span class="variable">$url</span> = <span class="variable">$w</span>-&gt;actionLogin(<span class="string">'http://'</span>.<span class="variable">$_SERVER</span>[<span class="string">'HTTP_HOST'</span>].<span class="variable">$_SERVER</span>[<span class="string">'REQUEST_URI'</span>]);</div><div class="line">    header(<span class="string">"Location:"</span>.<span class="variable">$url</span>);</div><div class="line">    <span class="built_in">exit</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 用户允许授权后，将会重定向到redirect_uri的网址上，并且带上code和state参数</div><div class="line"> **/</div><div class="line"></div><div class="line"><span class="variable">$access</span> = <span class="variable">$w</span>-&gt;getAccessToken();//通过code获取access_token</div><div class="line"><span class="variable">$w</span>-&gt;<span class="built_in">set</span>AccessToken(<span class="variable">$access</span>);//设置access_token</div><div class="line"></div><div class="line">//用access_token换取用户个人信息</div><div class="line"><span class="variable">$user_info</span> = <span class="variable">$w</span>-&gt;getMessage();</div><div class="line">var_dump(<span class="variable">$user_info</span>);</div></pre></td></tr></table></figure>
           
         
       
@@ -487,99 +697,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/11/others/myblog/" itemprop="url">
-                  我的博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-10-11T15:17:32+08:00" content="2016-10-11">
-              2016-10-11
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/10/11/others/hexo/" itemprop="url">
                   github的ssh-keygen
                 </a>
@@ -660,6 +777,99 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/11/others/myblog/" itemprop="url">
+                  我的博客
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-10-11T15:17:32+08:00" content="2016-10-11">
+              2016-10-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -701,7 +911,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
@@ -711,7 +921,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">Tags</span>
               </a>
             </div>
@@ -762,7 +972,7 @@
 <div class="theme-info">
   Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Mist
   </a>
 </div>
 
